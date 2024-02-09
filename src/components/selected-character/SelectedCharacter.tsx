@@ -1,4 +1,5 @@
 import Button from "../button/Button";
+import Loading from "../loading/Loading";
 import "./styles.css";
 
 export type SelectedCharacterProps = {
@@ -23,7 +24,8 @@ function SelectedCharacter({
         selected-character-${actualPlayer}
       `}
       >
-        <img src={image} />
+        {!image && <Loading />}
+        {image && <img src={image} />}
       </div>
       <Button onClick={onRemoveCharacter}>Remover</Button>
     </>
