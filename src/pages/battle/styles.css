@@ -1,0 +1,59 @@
+.battle-main {
+  width: 100%;
+  max-width: 2560px;
+  min-height: 100vh;
+  background-image: url("../../assets/images/battle_background.png");
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin: 0 auto 15px;
+}
+
+.title {
+  font-family: mortalkombat;
+  color: #f6f600;
+  text-shadow: 2px 3px black;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.battle-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.container-selection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.container-list {
+  display: flex;
+  flex: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-character-selected {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Liu Kang",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/f/fa/LiuKang.gif/revision/latest?cb=20130201201856&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/c/c1/Liu_Kang_MK2.gif/revision/latest?cb=20130130191545&path-prefix=pt-br"
+  },
+  {
+    "id": 2,
+    "name": "Kung Lao",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/8/8d/Kunglao.gif/revision/latest?cb=20130201201925&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/4/43/Kunglao-mk2-fix.gif/revision/latest?cb=20130201184051&path-prefix=pt-br"
+  },
+  {
+    "id": 3,
+    "name": "Johnny Cage",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/9/9a/John.gif/revision/latest?cb=20130201202020&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mkwikia/images/d/db/Jcmk2.gif/revision/latest?cb=20091003212807"
+  },
+  {
+    "id": 4,
+    "name": "Reptille",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/0/0a/Reptile.gif/revision/latest?cb=20130201202215&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mkwikia/images/f/ff/Animreptileqq6.gif/revision/latest?cb=20100114180140"
+  },
+  {
+    "id": 5,
+    "name": "Sub-Zero",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/c/c6/SubZerinho.gif/revision/latest?cb=20130201202307&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mkwikia/images/3/3c/Subzero-mk2-fix.gif/revision/latest?cb=20171230230014"
+  },
+  {
+    "id": 6,
+    "name": "Shang Tsung",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/4/4e/Shangtsung.gif/revision/latest?cb=20130201202329&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/e/e0/Shangtsung-mk2-fix.gif/revision/latest?cb=20130201002216&path-prefix=pt-br"
+  },
+  {
+    "id": 7,
+    "name": "Kitana",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/7/7b/Kitana.gif/revision/latest?cb=20130201202350&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/f/f7/Kitana-fix-sprite.gif/revision/latest?cb=20130201214806&path-prefix=pt-br"
+  },
+  {
+    "id": 8,
+    "name": "Jax",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/c/cc/Jax.gif/revision/latest?cb=20130201202450&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/d/db/Jax-mk2-fix.gif/revision/latest?cb=20130206214658&path-prefix=pt-br"
+  },
+  {
+    "id": 9,
+    "name": "Milena",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/f/f9/Mileena.gif/revision/latest?cb=20130201202517&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/e/e8/Millena-mk2-fix.gif/revision/latest?cb=20130130201703&path-prefix=pt-br"
+  },
+  {
+    "id": 10,
+    "name": "Baraka",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/5/55/Baraka.gif/revision/latest?cb=20130201202555&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mortal-kombat/images/a/a3/Barakinha.gif/revision/latest?cb=20130206212630&path-prefix=pt-br"
+  },
+  {
+    "id": 11,
+    "name": "Scorpion",
+    "imageOnList": "https://static.wikia.nocookie.net/mkwikia/images/1/1e/MK2_Scorpion.jpg",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mkwikia/images/f/f3/Scorpion-mk2-fix1.gif/revision/latest?cb=20081004200429"
+  },
+  {
+    "id": 12,
+    "name": "Raiden",
+    "imageOnList": "https://vignette.wikia.nocookie.net/mortal-kombat/images/d/df/Raiden.gif/revision/latest?cb=20130201202651&path-prefix=pt-br",
+    "imageDetail": "https://vignette.wikia.nocookie.net/mkwikia/images/0/09/Rayden-mk2-fix.gif/revision/latest?cb=20081004201213"
+  }
+]

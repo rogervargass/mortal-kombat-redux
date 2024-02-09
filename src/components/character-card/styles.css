@@ -1,0 +1,40 @@
+.box-character {
+  display: flex;
+  box-shadow: 0 0 0 10px #ccc;
+  margin: 5px;
+  width: 20%;
+  height: 11rem;
+  border: none;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.box-character-player1:hover:not(:disabled) {
+  z-index: 1;
+  animation: selector-player-one 0.16s infinite;
+}
+
+.box-character-player2:hover:not(:disabled) {
+  animation: selector-player-two 0.16s infinite;
+  z-index: 1;
+}
+
+@keyframes selector-player-one {
+  from {
+    box-shadow: 0 0 0 10px #1e8400;
+  }
+  to {
+    box-shadow: 0 0 0 10px #3ffa00;
+  }
+}
+
+@keyframes selector-player-two {
+  from {
+    box-shadow: 0 0 0 10px #6f0d01;
+  }
+  to {
+    box-shadow: 0 0 0 10px #c61e01;
+  }
+}

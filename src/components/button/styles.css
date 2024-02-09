@@ -1,0 +1,49 @@
+button {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  filter: brightness(10);
+  animation: disable-btn 0.5s forwards;
+}
+
+.container-btn {
+  width: 100%;
+}
+
+.btn {
+  color: black;
+  background: #f6f600;
+  padding: 10px 15px;
+  font-size: 24px;
+  font-family: mortalkombat;
+  box-shadow: 0 1px 5px 5px black;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out 0s;
+}
+
+.btn:hover {
+  background: #ffff5e;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  background-color: #999902;
+  box-shadow: 0 1px 5px 5px black;
+  box-shadow: 0 5px #black;
+}
+
+@keyframes disable-btn {
+  100% {
+    filter: brightness(1) grayscale(1);
+  }
+}

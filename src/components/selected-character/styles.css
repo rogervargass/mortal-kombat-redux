@@ -1,0 +1,27 @@
+.selected-character {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-name {
+  color: #f6f600;
+  text-shadow: 2px 3px black;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.selected-character img {
+  height: 500px;
+}
+
+.selected-character-player2 {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1240px) {
+  .selected-character img {
+    height: 350px;
+  }
+}
