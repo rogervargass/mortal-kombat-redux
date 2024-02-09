@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ReactAudioPlayer from "react-audio-player";
+import MK_THEME from "../../assets/audio/theme_music.mp3";
 import BackButton from "../../components/back-button/BackButton";
 import CharacterCard from "../../components/character-card/CharacterCard";
 import SelectedCharacter from "../../components/selected-character/SelectedCharacter";
@@ -131,6 +133,12 @@ function Battle() {
         </div>
       </section>
       <BackButton />
+      <ReactAudioPlayer
+        autoPlay
+        preload="metadata"
+        src={MK_THEME}
+        volume={0.2}
+      />
     </main>
   );
 }
