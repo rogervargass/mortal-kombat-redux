@@ -19,7 +19,12 @@ function ModalCart({ isModalOpen, setIsModalOpen, cart }: ModalCartProps) {
       {
         <div className="cart-container">
           <h2>Carrinho</h2>
-          {cart.length <= 0 && <Basket size={40} />}
+          {cart.length <= 0 && (
+            <>
+              <p>Seu carrinho esta vazio</p>
+              <Basket size={40} />
+            </>
+          )}
           {cart.length > 0 && (
             <>
               {cart.map((character) => (
