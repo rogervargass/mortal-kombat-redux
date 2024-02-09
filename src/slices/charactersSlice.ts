@@ -40,8 +40,18 @@ export const charactersSlice = createSlice({
         state.charactersToVote.sort((a, b) => b.votes - a.votes);
       }
     },
+    searchCharacterToBuy: (state, action: PayloadAction<string>) => {
+      if (action.payload === "") {
+        state.charactersToBuy = CHARACTERS.slice(8, 10);
+      } else {
+        state.charactersToBuy = state.charactersToBuy.filter((character) =>
+          character.name.toLowerCase().includes(action.payload.toLowerCase())
+        );
+      }
+    },
   },
 });
 
-export const { addCharacter, voteCharacter } = charactersSlice.actions;
+export const { addCharacter, voteCharacter, searchCharacterToBuy } =
+  charactersSlice.actions;
 export default charactersSlice.reducer;

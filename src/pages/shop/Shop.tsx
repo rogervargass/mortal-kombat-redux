@@ -5,7 +5,10 @@ import Button from "../../components/button/Button";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { addToCart } from "../../slices/cartSlice";
-import { voteCharacter } from "../../slices/charactersSlice";
+import {
+  searchCharacterToBuy,
+  voteCharacter,
+} from "../../slices/charactersSlice";
 import ModalCart from "./components/ModalCart";
 
 function Shop() {
@@ -17,6 +20,17 @@ function Shop() {
 
   const dispatch = useAppDispatch();
 
+  const onSearch = (query: string) => {
+    setTimeout(() => {
+      dispatch(searchCharacterToBuy(query));
+    }, 1000);
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value;
+    onSearch(query);
+  };
+
   return (
     <main className="shop-main">
       <ModalCart
@@ -24,10 +38,21 @@ function Shop() {
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
       />
+      <div className="btn-cart-container">
+        <Button onClick={() => setIsModalOpen(true)}>
+          {`Ver Carrinho (${cart.length})`}
+        </Button>
+      </div>
       <h1 className="shop-title">Loja</h1>
       <section className="container shop-content">
         <div className="shop-section">
           <h2 className="shop-subtitle">Itens a venda</h2>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Digite o nome do personagem..."
+            onChange={handleSearchChange}
+          />
           <section className="characters-to-buy">
             {charactersToBuy.map((character) => (
               <div className="shop-item" key={character.id}>
@@ -40,11 +65,6 @@ function Shop() {
               </div>
             ))}
           </section>
-          <div className="btn-cart-container">
-            <Button onClick={() => setIsModalOpen(true)}>
-              {`Ver Carrinho (${cart.length})`}
-            </Button>
-          </div>
         </div>
         <div className="characters-to-vote-container">
           <h2 className="shop-subtitle">Proximo personagem</h2>
@@ -57,7 +77,7 @@ function Shop() {
                   <p>Nome: {character.name}</p>
                   <p>Votos: {character.votes}</p>
                 </div>
-                <div className="btn-cart-container">
+                <div className="btn-vote-container">
                   <Button onClick={() => dispatch(voteCharacter(character.id))}>
                     Votar
                   </Button>
