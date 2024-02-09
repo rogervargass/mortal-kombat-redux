@@ -1,3 +1,4 @@
+import { X } from "@phosphor-icons/react";
 import { ReactNode } from "react";
 import "./styles.css";
 
@@ -18,7 +19,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
           onClick={onClose}
           aria-label="botão para fechar modal"
         >
-          X
+          <X />
         </span>
         {children}
       </div>

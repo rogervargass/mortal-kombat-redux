@@ -1,13 +1,12 @@
 import "./styles.css";
 
-import { Basket } from "@phosphor-icons/react";
 import { useState } from "react";
 import Button from "../../components/button/Button";
-import Modal from "../../components/modal/Modal";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { addToCart } from "../../slices/cartSlice";
 import { voteCharacter } from "../../slices/charactersSlice";
+import ModalCart from "./components/ModalCart";
 
 function Shop() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,21 +19,11 @@ function Shop() {
 
   return (
     <main className="shop-main">
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        {
-          <div>
-            <h2>Carrinho</h2>
-            {cart.length <= 0 && <Basket size={32} />}
-            {cart.length > 0 && (
-              <ul>
-                {cart.map((character) => (
-                  <li key={character.id}>{character.name}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        }
-      </Modal>
+      <ModalCart
+        cart={cart}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
       <h1 className="shop-title">Loja</h1>
       <section className="container shop-content">
         <div className="shop-section">
@@ -57,17 +46,22 @@ function Shop() {
             </Button>
           </div>
         </div>
-        <div className="characters-to-vote">
-          <h2 className="shop-subtitle">Escolha o proximo personagem</h2>
-          <section className="characters-to-buy">
-            {charactersToVote.map((character) => (
-              <div className="shop-item" key={character.id}>
+        <div className="characters-to-vote-container">
+          <h2 className="shop-subtitle">Proximo personagem</h2>
+          <section className="characters-to-vote">
+            {charactersToVote.map((character, index) => (
+              <div className="ranking-item" key={character.id}>
+                <h3>{index + 1}</h3>
                 <img src={character.imageOnList} alt={character.name} />
-                <p>{character.name}</p>
-                <p>{character.votes}</p>
-                <Button onClick={() => dispatch(voteCharacter(character.id))}>
-                  Votar
-                </Button>
+                <div className="vote-info">
+                  <p>Nome: {character.name}</p>
+                  <p>Votos: {character.votes}</p>
+                </div>
+                <div className="btn-cart-container">
+                  <Button onClick={() => dispatch(voteCharacter(character.id))}>
+                    Votar
+                  </Button>
+                </div>
               </div>
             ))}
           </section>

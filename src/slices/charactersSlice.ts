@@ -16,9 +16,9 @@ const initialState: CharactersState = {
   charactersToBuy: CHARACTERS.slice(8, 10),
   charactersToVote: CHARACTERS.slice(10, 12).map((character) => ({
     ...character,
-    votes: 0,
+    votes: 50,
   })),
-  totalVotes: 0,
+  totalVotes: 100,
 };
 
 export const charactersSlice = createSlice({
@@ -36,6 +36,8 @@ export const charactersSlice = createSlice({
       if (character) {
         character.votes += 1;
         state.totalVotes += 1;
+
+        state.charactersToVote.sort((a, b) => b.votes - a.votes);
       }
     },
   },
