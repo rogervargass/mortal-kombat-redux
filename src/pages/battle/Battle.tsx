@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CharacterCard from "../../components/character-card/CharacterCard";
 import SelectedCharacter from "../../components/selected-character/SelectedCharacter";
-import CHARACTERS from "../../data/characters.json";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import { Character } from "../../types/Character";
 import "./styles.css";
 
@@ -10,6 +10,9 @@ function Battle() {
     useState<Character | null>(null);
   const [characterPlayerTwo, setCharacterPlayerTwo] =
     useState<Character | null>(null);
+  const charactersAvailable = useAppSelector(
+    (state) => state.characters.charactersAvailable
+  );
 
   const searchActualPlayer = (
     player1: Character | null,
@@ -42,7 +45,7 @@ function Battle() {
   };
 
   function handleSelectCharacter(idCharacter: number) {
-    const selectedCharacter = CHARACTERS.find(
+    const selectedCharacter = charactersAvailable.find(
       (character) => character.id === idCharacter
     );
 
@@ -102,7 +105,7 @@ function Battle() {
             onRemove={() => handleRemoveCharacter("player1")}
           />
           <section className="container-list">
-            {CHARACTERS.map((character) => {
+            {charactersAvailable.map((character) => {
               const isDisabled =
                 !actualPlayer ||
                 checkIfCharacterIsSelected(idSelectedCharacters, character.id);
