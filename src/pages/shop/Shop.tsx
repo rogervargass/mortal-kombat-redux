@@ -55,16 +55,18 @@ function Shop() {
             onChange={handleSearchChange}
           />
           <section className="characters-to-buy">
-            {charactersToBuy.map((character) => (
-              <div className="shop-item" key={character.id}>
-                <img src={character.imageOnList} alt={character.name} />
-                <p>{character.name}</p>
-                <p>R$ 50,00</p>
-                <Button onClick={() => dispatch(addToCart(character.id))}>
-                  Comprar
-                </Button>
-              </div>
-            ))}
+            {charactersToBuy.length > 0 &&
+              charactersToBuy.map((character) => (
+                <div className="shop-item" key={character.id}>
+                  <img src={character.imageOnList} alt={character.name} />
+                  <p>{character.name}</p>
+                  <p>R$ 50,00</p>
+                  <Button onClick={() => dispatch(addToCart(character.id))}>
+                    Comprar
+                  </Button>
+                </div>
+              ))}
+            {charactersToBuy.length <= 0 && <p>Personagens nao encontrados!</p>}
           </section>
         </div>
         <div className="characters-to-vote-container">
