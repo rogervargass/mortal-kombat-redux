@@ -8,7 +8,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router />
-      <ReactAudioPlayer src={MK_THEME} autoPlay />
+      <ReactAudioPlayer src={MK_THEME} autoPlay controls />
     </Provider>
   );
 }
