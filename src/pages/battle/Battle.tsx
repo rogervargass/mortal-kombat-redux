@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BackButton from "../../components/back-button/BackButton";
 import CharacterCard from "../../components/character-card/CharacterCard";
 import SelectedCharacter from "../../components/selected-character/SelectedCharacter";
 import { useAppSelector } from "../../hooks/useAppSelector";
@@ -129,6 +130,7 @@ function Battle() {
           />
         </div>
       </section>
+      <BackButton />
     </main>
   );
 }

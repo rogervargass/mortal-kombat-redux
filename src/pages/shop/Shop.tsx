@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import { useState } from "react";
+import BackButton from "../../components/back-button/BackButton";
 import Button from "../../components/button/Button";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
@@ -87,6 +88,7 @@ function Shop() {
           </section>
         </div>
       </section>
+      <BackButton />
     </main>
   );
 }
