@@ -12,7 +12,7 @@ interface CharactersState {
 }
 
 const initialState: CharactersState = {
-  charactersAvailable: CHARACTERS.slice(0, 8),
+  charactersAvailable: CHARACTERS,
   charactersToBuy: CHARACTERS.slice(8, 10),
   charactersToVote: CHARACTERS.slice(10, 12).map((character) => ({
     ...character,

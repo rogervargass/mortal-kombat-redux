@@ -57,12 +57,6 @@ h1 {
   max-height: 90%;
 }
 
-.back-button {
-  margin-top: 40px;
-  position: relative;
-  height: 50px;
-}
-
 @keyframes selector-img {
   from {
     box-shadow: 0 0 0 10px #6d6d03;

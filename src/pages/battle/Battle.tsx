@@ -132,7 +132,9 @@ function Battle() {
           />
         </div>
       </section>
-      <BackButton />
+      <div className="back-button">
+        <BackButton />
+      </div>
       <ReactAudioPlayer
         autoPlay
         preload="metadata"

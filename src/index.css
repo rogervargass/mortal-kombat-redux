@@ -21,6 +21,12 @@ body {
   margin: 0 auto;
 }
 
+.back-button {
+  margin-top: 40px;
+  position: relative;
+  height: 50px;
+}
+
 @font-face {
   font-family: mortalkombat;
   src: url("./assets/mortalkombat2.ttf");
