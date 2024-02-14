@@ -13,5 +13,5 @@ export async function getGameScreenshots() {
   const response = await axios.get(`${API_URL}/${MK2_ID}/screenshots`, {
     params,
   });
-  return response.data.results;
+  return response.data;
 }

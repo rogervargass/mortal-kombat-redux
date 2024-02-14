@@ -1,3 +1,13 @@
+.gallery-page {
+  width: 100%;
+  max-width: 2560px;
+  min-height: 100vh;
+  background-image: url("../../assets/images/gallery_background.jpg");
+  background-color: #000;
+  background-size: cover;
+  background-position: bottom;
+}
+
 h1 {
   text-align: center;
 }
@@ -6,7 +16,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
-  max-width: 900px;
+  max-width: 760px;
   margin: 0 auto;
   background-color: #4d4c4c;
   padding: 10px;
@@ -16,7 +26,7 @@ h1 {
   max-width: 640px;
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 190px;
   object-fit: cover;
   cursor: pointer;
 }
@@ -40,6 +50,12 @@ h1 {
 .selected-photo {
   max-width: 90%;
   max-height: 90%;
+}
+
+.back-button {
+  margin-top: 40px;
+  position: relative;
+  height: 50px;
 }
 
 @keyframes selector-img {
