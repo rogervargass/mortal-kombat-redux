@@ -27,7 +27,7 @@ function Gallery() {
   return (
     <>
       <main className="gallery-page">
-        <section className="container">
+        <section className="container gallery-content">
           <h1 className="title">Game Screenshots</h1>
           {status === FetchStatus.LOADING && <Loading />}
 
