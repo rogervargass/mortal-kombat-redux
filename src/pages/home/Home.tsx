@@ -7,6 +7,7 @@ function Home() {
 
   const handleStart = () => navigate("/battle");
   const handleShop = () => navigate("/shop");
+  const handleGallery = () => navigate("/gallery");
 
   return (
     <main className="home-main">
@@ -19,6 +20,7 @@ function Home() {
         <div className="btns-container">
           <Button onClick={handleStart}>Start</Button>
           <Button onClick={handleShop}>Loja</Button>
+          <Button onClick={handleGallery}>Galeria</Button>
         </div>
       </section>
     </main>

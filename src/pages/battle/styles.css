@@ -5,7 +5,7 @@
   background-image: url("../../assets/images/battle_background.png");
   background-color: #000;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 
   text-align: center;
   display: flex;

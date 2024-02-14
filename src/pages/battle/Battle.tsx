@@ -138,6 +138,7 @@ function Battle() {
         preload="metadata"
         src={MK_THEME}
         volume={0.2}
+        loop
       />
     </main>
   );
