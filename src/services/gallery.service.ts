@@ -1,3 +1,4 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import axios from "axios";
 
 const API_URL =
@@ -18,3 +19,15 @@ export async function getGameScreenshots() {
   });
   return response.data;
 }
+
+export const galleryApi = createApi({
+  reducerPath: "galleryApi",
+  baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
+  endpoints: (builder) => ({
+    getScreenshots: builder.query({
+      query: () => `${MK2_ID}/screenshots?key=${API_KEY}`,
+    }),
+  }),
+});
+
+export const { useGetScreenshotsQuery } = galleryApi;

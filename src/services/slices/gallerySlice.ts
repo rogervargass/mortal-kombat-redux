@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { FetchStatus } from "../../types/Fetch";
 import { GameScreenshot } from "../../types/Image";
 import { getGameScreenshots } from "../gallery.service";
@@ -36,13 +36,16 @@ export const gallerySlice = createSlice({
       .addCase(fetchScreenshots.pending, (state) => {
         state.status = FetchStatus.LOADING;
       })
-      .addCase(fetchScreenshots.fulfilled, (state, action) => {
-        state.status = FetchStatus.SUCCEEDED;
-        state.screenshots = action.payload.map((screenshot: any) => ({
-          id: screenshot.id,
-          image: screenshot.image,
-        }));
-      })
+      .addCase(
+        fetchScreenshots.fulfilled,
+        (state, action: PayloadAction<GameScreenshot[]>) => {
+          state.status = FetchStatus.SUCCEEDED;
+          state.screenshots = action.payload.map((screenshot) => ({
+            id: screenshot.id,
+            image: screenshot.image,
+          }));
+        }
+      )
       .addCase(fetchScreenshots.rejected, (state, action) => {
         state.status = FetchStatus.ERROR;
         state.error = action.error.message || null;
