@@ -61,6 +61,15 @@ npm run dev
 yarn dev
 ```
 
+#### 5. Efetuar login:
+
+Para efetuar login na aplicação precisa de um login valido pela api Reqres (https://reqres.in/) aqui esta um exemplo:
+
+```
+email: eve.holt@reqres.in
+senha: pistol
+```
+
 ## 💻 Sobre o Projeto <br id="-sobre-o-projeto">
 
 Este projeto tem como objetivo colocar em pratica os conhecimentos adquiridos em aula sobre Redux, o projeto tem como tema o Mortal Kombat 2.
