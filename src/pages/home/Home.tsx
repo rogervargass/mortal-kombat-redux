@@ -1,16 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import "./styles.css";
 
 function Home() {
   const navigate = useNavigate();
+  const { user } = useAppSelector((state) => state.user);
 
   const handleStart = () => navigate("/battle");
   const handleShop = () => navigate("/shop");
   const handleGallery = () => navigate("/gallery");
+  const handleLogin = () => navigate("/login");
+  const handleMyAccount = () => navigate("/my-account");
 
   return (
     <main className="home-main">
+      <div className="btn-login-container">
+        {user.email ? (
+          <Button onClick={handleMyAccount}>Perfil</Button>
+        ) : (
+          <Button onClick={handleLogin}>Entrar</Button>
+        )}
+      </div>
       <section className="container home-content">
         <img
           className="logo"

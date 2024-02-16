@@ -2,7 +2,7 @@ import { Basket } from "@phosphor-icons/react";
 import Button from "../../../components/button/Button";
 import Modal from "../../../components/modal/Modal";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { removeToCart } from "../../../slices/cartSlice";
+import { removeToCart } from "../../../services/slices/cartSlice";
 import { Character } from "../../../types/Character";
 import "./styles.css";
 

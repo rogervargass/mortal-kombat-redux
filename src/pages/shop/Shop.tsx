@@ -1,20 +1,22 @@
 import "./styles.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/back-button/BackButton";
 import Button from "../../components/button/Button";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { addToCart } from "../../slices/cartSlice";
+import { addToCart } from "../../services/slices/cartSlice";
 import {
   searchCharacterToBuy,
   voteCharacter,
-} from "../../slices/charactersSlice";
+} from "../../services/slices/charactersSlice";
 import ModalCart from "./components/ModalCart";
 
 function Shop() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { characters, shopCart } = useAppSelector((state) => state);
+  const { characters, shopCart, user } = useAppSelector((state) => state);
+  const navigate = useNavigate();
 
   const { charactersToBuy, charactersToVote } = characters;
   const { cart } = shopCart;
@@ -32,6 +34,8 @@ function Shop() {
     onSearch(query);
   };
 
+  const handleMyAccount = () => navigate("/my-account");
+
   return (
     <main className="shop-main">
       <ModalCart
@@ -41,8 +45,11 @@ function Shop() {
       />
       <div className="btn-cart-container">
         <Button onClick={() => setIsModalOpen(true)}>
-          {`Ver Carrinho (${cart.length})`}
+          {`Carrinho (${cart.length})`}
         </Button>
+        {user.user.email && (
+          <Button onClick={handleMyAccount}>{`Perfil`}</Button>
+        )}
       </div>
       <h1 className="shop-title">Loja</h1>
       <section className="container shop-content">

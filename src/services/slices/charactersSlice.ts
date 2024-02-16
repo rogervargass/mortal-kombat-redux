@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import CHARACTERS from "../data/characters.json";
-import { Character } from "../types/Character";
+import CHARACTERS from "../../data/characters.json";
+import { Character } from "../../types/Character";
 
 type CharacterToVote = Character & { votes: number };
 

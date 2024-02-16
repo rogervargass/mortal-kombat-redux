@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BackButton from "../../components/back-button/BackButton";
 import Loading from "../../components/loading/Loading";
-import { fetchScreenshots } from "../../slices/gallerySlice";
+import { fetchScreenshots } from "../../services/slices/gallerySlice";
 import { RootState } from "../../store/store";
 import { FetchStatus } from "../../types/Fetch";
 import "./styles.css";
@@ -25,44 +25,42 @@ function Gallery() {
   };
 
   return (
-    <>
-      <main className="gallery-page">
-        <section className="container gallery-content">
-          <h1 className="title">Game Screenshots</h1>
-          {status === FetchStatus.LOADING && <Loading />}
+    <main className="gallery-page">
+      <section className="container gallery-content">
+        <h1 className="title">Game Screenshots</h1>
+        {status === FetchStatus.LOADING && <Loading />}
 
-          {status === FetchStatus.SUCCEEDED && (
-            <div className="gallery">
-              {screenshots.map((image) => (
+        {status === FetchStatus.SUCCEEDED && (
+          <div className="gallery">
+            {screenshots.map((image) => (
+              <img
+                key={image.id}
+                src={image.image}
+                alt={`Mortal Kombat 2 - Screenshot ${image.id}`}
+                className="photo"
+                onClick={() => handleClick(image.image)}
+              />
+            ))}
+            {selectedPhoto && (
+              <div className="overlay" onClick={() => setSelectedPhoto(null)}>
                 <img
-                  key={image.id}
-                  src={image.image}
-                  alt={`Mortal Kombat 2 - Screenshot ${image.id}`}
-                  className="photo"
-                  onClick={() => handleClick(image.image)}
+                  src={selectedPhoto}
+                  alt={`Selected Photo`}
+                  className="selected-photo"
                 />
-              ))}
-              {selectedPhoto && (
-                <div className="overlay" onClick={() => setSelectedPhoto(null)}>
-                  <img
-                    src={selectedPhoto}
-                    alt={`Selected Photo`}
-                    className="selected-photo"
-                  />
-                </div>
-              )}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
+        )}
 
-          {status === FetchStatus.ERROR && (
-            <p>Falha ao buscar imagens! Error: {error}</p>
-          )}
-        </section>
-        <div className="back-button">
-          <BackButton />
-        </div>
-      </main>
-    </>
+        {status === FetchStatus.ERROR && (
+          <p>Falha ao buscar imagens! Error: {error}</p>
+        )}
+      </section>
+      <div className="back-button">
+        <BackButton />
+      </div>
+    </main>
   );
 }
 

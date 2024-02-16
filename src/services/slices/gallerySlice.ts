@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getGameScreenshots } from "../services/gallery.service";
-import { FetchStatus } from "../types/Fetch";
-import { GameScreenshot } from "../types/Image";
+import { FetchStatus } from "../../types/Fetch";
+import { GameScreenshot } from "../../types/Image";
+import { getGameScreenshots } from "../gallery.service";
 
-interface CartState {
+interface GalleryState {
   screenshots: GameScreenshot[];
   status: FetchStatus;
   error: string | null;
 }
 
-const initialState: CartState = {
+const initialState: GalleryState = {
   screenshots: [],
   status: FetchStatus.IDLE,
   error: null,

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import CHARACTERS from "../data/characters.json";
-import { Character } from "../types/Character";
+import CHARACTERS from "../../data/characters.json";
+import { Character } from "../../types/Character";
 
 interface CartState {
   cart: Character[];

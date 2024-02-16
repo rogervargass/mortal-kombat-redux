@@ -1,0 +1,27 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: mortalkombat;
+  color: #f6f600;
+}
+
+.input {
+  all: unset;
+  border: 1px solid #f6f600;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: mortalkombat;
+  color: #f6f600;
+  background-color: #000;
+}

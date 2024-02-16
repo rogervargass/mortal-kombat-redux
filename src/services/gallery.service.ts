@@ -1,7 +1,10 @@
 import axios from "axios";
 
-const API_URL = "https://api.rawg.io/api/games";
-const API_KEY = "f41a693f62804575964a122779c0e983";
+const API_URL =
+  (import.meta.env.VITE_API_URL as string) || "https://api.rawg.io/api/games";
+const API_KEY =
+  (import.meta.env.VITE_API_KEY as string) ||
+  "f41a693f62804575964a122779c0e983";
 
 const params = {
   key: API_KEY,

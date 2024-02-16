@@ -137,5 +137,10 @@
   max-width: 300px;
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 0px;
+
+  button {
+    margin: 10px 0;
+    max-width: 200px;
+  }
 }
